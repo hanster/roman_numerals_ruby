@@ -1,20 +1,17 @@
 class RomanNumeral
 
   def toRoman number
+    
+    numerals = Hash[10 => 'X', 5 => 'V', 1 => 'I']
     result = ''
 
-    while (number > 0) do
-      if number >= 10
-        result += 'X'
-        number = number - 10
-      elsif number >= 5
-        result += "V"
-        number = number - 5
-      else
-        result += "I"
-        number = number - 1
+    numerals.each do |key, value|
+      while number >= key
+        result += value
+        number = number - key
       end
     end
+    
     return result
   end
 end
