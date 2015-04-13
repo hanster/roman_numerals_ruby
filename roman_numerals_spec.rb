@@ -6,10 +6,6 @@ class RomanNumeral
 end
 
 describe RomanNumeral do
-  it 'create new RomanNumeral converter' do
-    
-    converter = RomanNumeral.new
-  end
 
   it 'converts 1 to I' do
     converter = RomanNumeral.new
