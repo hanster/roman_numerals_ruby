@@ -1,2 +1,3 @@
 # roman_numerals_ruby
-ruby kata
+
+[Kata Description](http://agilekatas.co.uk/katas/romannumerals-kata)
