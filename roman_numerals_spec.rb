@@ -3,28 +3,42 @@ class RomanNumeral
   def toRoman number
     result = ''
 
-    return 'I'*number
+    while (number > 0) do
+      if number >= 5
+        result += "V"
+        number = number - 5
+      else
+        result += "I"
+        number = number - 1
+      end
+    end
+    return result
   end
 end
 
 describe RomanNumeral do
 
+  before(:each) do
+    @converter = RomanNumeral.new
+  end
+
   it 'converts 1 to I' do
-    converter = RomanNumeral.new
-    result = converter.toRoman(1)
+    result = @converter.toRoman(1)
     expect(result).to eq('I')
   end
 
   it 'converts 2 to II' do 
-    converter = RomanNumeral.new
-    result = converter.toRoman(2)
+    result = @converter.toRoman(2)
     expect(result).to eq('II')
   end
 
   it 'converts 3 to III' do
-    converter = RomanNumeral.new
-    result = converter.toRoman(3)
+    result = @converter.toRoman(3)
     expect(result).to eq('III')
   end
 
+  it 'converts 5 to V' do
+    result = @converter.toRoman(5)
+    expect(result).to eq('V')
+  end
 end
