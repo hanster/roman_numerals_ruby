@@ -4,7 +4,10 @@ class RomanNumeral
     result = ''
 
     while (number > 0) do
-      if number >= 5
+      if number >= 10
+        result += 'X'
+        number = number - 10
+      elsif number >= 5
         result += "V"
         number = number - 5
       else
@@ -40,5 +43,10 @@ describe RomanNumeral do
   it 'converts 5 to V' do
     result = @converter.toRoman(5)
     expect(result).to eq('V')
+  end
+
+  it 'converts 10 to X' do
+    result = @converter.toRoman(10)
+    expect(result).to eq ('X')
   end
 end
